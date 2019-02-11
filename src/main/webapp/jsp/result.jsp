@@ -16,5 +16,6 @@ Posizione sbagliata: <%= request.getAttribute("PosErr")%>
         </select>
         <button type="submit" name="invia">Invia</button>
     </form>
+
 </body>
 </html>
