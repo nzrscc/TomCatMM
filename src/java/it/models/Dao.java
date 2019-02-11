@@ -83,28 +83,19 @@ public class Dao {
         }
     }
 
-    public StringBuilder seleziona(int indice, String nomeTabella)
+    public int prendiID()
     {
-        StringBuilder selezionato=null;
+        int maxID=0;
         String selezionata=null;
         try {
-            ResultSet resultset = this.stmt.executeQuery("SELECT * FROM "+nomeTabella);
-            //System.out.println("Lettura informazioni...\n");
-            if(indice>1)
-            {
-                while(resultset.next()) {
-                    selezionato.append(resultset.getString(indice));
-                }
-            }else
-            {
-                this.stmt.executeUpdate("SELECT ID FROM "+nomeTabella);
-                selezionato.append(resultset.getString(indice));
-
-            }
-        } catch (SQLException se) {
+            ResultSet resultset = this.stmt.executeQuery("SELECT ID FROM  COMBINATION");
+            while(resultset.next()){
+                maxID=resultset.getInt("ID");}
+        }catch (SQLException se) {
             se.printStackTrace();
         }
-        return selezionato;
+        System.out.println("Nel dao maxID= "+maxID);
+        return maxID;
     }
 
 }

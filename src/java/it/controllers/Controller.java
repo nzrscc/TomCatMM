@@ -53,18 +53,6 @@ public class Controller {
         this.esito=this.combinationService.check(this.soluzione,this.input);
     }
 
-    public boolean esitoGiocata()
-    {
-        if(esito[0]==3)
-        {
-            return true; //hai vinto
-        }
-        else
-        {
-            return false; //ritenta
-        }
-    }
-
     public void salvaGiocata(int nTentativi)
     {
         this.tryService.save(nTentativi,input,esito);

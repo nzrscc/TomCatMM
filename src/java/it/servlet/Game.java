@@ -15,6 +15,7 @@ import java.util.Arrays;
 @WebServlet("/Game")
 public class Game extends HttpServlet {
     private Controller controller;
+    private int nTentativi=1;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = (String) request.getSession().getAttribute("username");
@@ -22,19 +23,21 @@ public class Game extends HttpServlet {
         combination += "," + request.getParameter("numero2");
         combination += "," + request.getParameter("numero3");
         System.out.println("La combination è: "+combination);
-        if(Ciclo.contatore == 2 ) {
-            controller = Context.getInstance().getController();
-            controller.setUsername(username);
-            controller.creaCombinazione();
-            request.getSession().setAttribute("soluzione", Arrays.toString(controller.getSoluzione()));
+        if(Ciclo.contatore == 4 ) {
+            this.controller = Context.getInstance().getController();
+            this.controller.setUsername(username);
+            this.controller.creaCombinazione();
+            request.getSession().setAttribute("soluzione", Arrays.toString(this.controller.getSoluzione()));
             System.out.println(request.getAttribute("soluzione"));
         }
-        controller.verificaInput(combination);
-        controller.verificaCombinazione();
-        request.setAttribute("PosEsa", controller.getEsito()[0]);
-        request.setAttribute("PosErr", controller.getEsito()[1]);
-        request.setAttribute("input", Arrays.toString(controller.getInput()));
-        if(controller.getEsito()[0]<3)
+        this.controller.verificaInput(combination);
+        this.controller.verificaCombinazione();
+        this.controller.salvaGiocata(this.nTentativi);
+        this.nTentativi++;
+        request.setAttribute("PosEsa", this.controller.getEsito()[0]);
+        request.setAttribute("PosErr", this.controller.getEsito()[1]);
+        request.setAttribute("input", Arrays.toString(this.controller.getInput()));
+        if(this.controller.getEsito()[0]<3)
         {
             request.getRequestDispatcher("jsp/result.jsp").forward(request,response);
         }else

@@ -3,7 +3,7 @@
 <html>
 <head>
 
-    <h2>Benvenuto <%= request.getSession().getAttribute("username")%></h2>
+    <h2>Ciao <%= request.getSession().getAttribute("username")%></h2>
     <br>
 </head>
 <body>

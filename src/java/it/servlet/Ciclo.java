@@ -9,7 +9,7 @@ import java.io.IOException;
 
 @WebServlet("/Ciclo")
 public class Ciclo extends HttpServlet {
-    public static int contatore=3; //per farne 3
+    public static int contatore=5; //per farne 5
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
     }
