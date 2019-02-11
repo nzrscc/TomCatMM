@@ -18,7 +18,6 @@
         <input type="number" name="numero3" min="0" max="9" step="1">
         <br>
         <br>
-        <input type="hidden" name="usernameGame" value="<%= request.getAttribute("username")%>" >
         <button type="submit" name="invia">Invia</button>
     </form>
 </body>

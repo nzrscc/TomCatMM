@@ -22,10 +22,6 @@ public class ValidatorService {
         }
         //System.out.println("Lenght= "+input.length);
         //System.out.print("Il vettore è: ");
-        for(int i=0;i<input.length;i++)
-        {
-            System.out.print(input[i]+" ");
-        }
         return input;
     }
 

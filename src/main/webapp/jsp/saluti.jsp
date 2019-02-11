@@ -4,6 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Complimenti <%= request.getSession().getAttribute("username") %>. Hai vinto!! </h1>
+Ciao <%= request.getSession().getAttribute("username")%> la soluzione era: <%= request.getSession().getAttribute("soluzione")%>
 </body>
 </html>

@@ -11,7 +11,7 @@
 <form action="<%=request.getContextPath()+"/Start" %>" method="get">
     <label for="username">Username</label>
     <input type="text" name="username" value="">
-    <br>
+    <br><br><br>
     <button type="submit" name="invia">Invia</button>
 </form>
 </body>

@@ -9,19 +9,21 @@ import java.io.IOException;
 
 @WebServlet("/Ciclo")
 public class Ciclo extends HttpServlet {
-    public static int contatore=0;
+    public static int contatore=3; //per farne 3
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        contatore++;
-        if(contatore<=3)
+        if(contatore>0)
         {
+            contatore --;
+            request.getSession().setAttribute("tentativi", contatore);
             request.getRequestDispatcher("jsp/game.jsp").include(request,response);
         }else
         {
-            System.out.println("Hai finito i tentativi!");
+            //System.out.println("Hai finito i tentativi!");
+            request.getRequestDispatcher("jsp/saluti.jsp").include(request,response);
         }
     }
 }
