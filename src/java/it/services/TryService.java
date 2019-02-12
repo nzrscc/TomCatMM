@@ -18,9 +18,4 @@ public class TryService {
         int numEsatto=esito[1];
         this.tryModel.popolaTabella(tentativi,posEsatta,numEsatto,numeri);
     }
-
-    public void retrieve()
-    {
-
-    }
 }

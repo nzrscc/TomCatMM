@@ -4,8 +4,6 @@ import it.services.CombinationService;
 import it.services.TryService;
 import it.services.ValidatorService;
 
-import java.util.ArrayList;
-
 public class Controller {
     private ValidatorService validatorService;
     private CombinationService combinationService;

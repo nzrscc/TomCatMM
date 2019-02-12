@@ -37,10 +37,4 @@ public class CombinationModel {
                 "('0', '"+ this.username + "', '" + Arrays.toString(soluzione) +  "', '" + this.timeStamp + "')";*/
         instanceDao.popolaTabella(sql);
     }
-
-    /*public int prendiID()
-    {
-
-    }*/
-
 }

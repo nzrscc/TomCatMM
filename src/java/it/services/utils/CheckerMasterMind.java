@@ -37,9 +37,7 @@ public class CheckerMasterMind implements Checker {
                 {
                     posizioneEsatta++;
                     riSoluzione[j-10]=15;
-                    //vettore.modificaRisoluzioneNumeri(j-10); this.risoluzioneNumeri[indice]=15;
                     riInput[j-10]=11;
-                    //vettore.modificaRisoluzioneControllo((j-10)); this.risoluzioneCorretta[indice]=11;
                 }else{}
             }
         }
@@ -58,9 +56,7 @@ public class CheckerMasterMind implements Checker {
                 if (numEsatto == true)
                 {
                     numeriEsatti++;
-                    //vettore.modificaRisoluzioneControllo((j - 10));
                     riSoluzione[j-10]=15;
-                    //vettore.modificaRisoluzioneNumeri(i);
                     riInput[i]=11;
                 } else {}
             }
@@ -70,11 +66,9 @@ public class CheckerMasterMind implements Checker {
         if(posizioneEsatta==3)
         {
             System.out.println("Complimenti! Combinazione esatta!");
-            //return true;
         }else
         {
             System.out.println("\nI numeri in posizione esatta sono: "+posizioneEsatta+";\nI numeri presenti in posizione errata sono: "+(numeriEsatti)+"\n");
-            //return false;
         }
         return esito;
 

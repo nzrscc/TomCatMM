@@ -14,13 +14,17 @@ public class ServletStart extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username=request.getParameter("username");
-        request.getSession().setAttribute("username", username);
-        response.sendRedirect("Ciclo");
-        //request.getServletContext().getNamedDispatcher("java/it/servlet/Ciclo.java").forward(request,response);
+        setUsername(request,response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    }
+
+    private void setUsername(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException
+    {
+        String username=request.getParameter("username");
+        request.getSession().setAttribute("username", username);
+        response.sendRedirect("Ciclo");
     }
 }

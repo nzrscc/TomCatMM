@@ -19,8 +19,6 @@ public class CombinationService  {
         for(int i=0;i<this.soluzione.length;i++)
         {
             this.soluzione[i]=(int)(Math.random()*10);
-            //System.out.print(soluzione[i]);
-            //System.out.println();
         }
         this.combinationModel.popolaTabella(this.soluzione);
         return this.soluzione;

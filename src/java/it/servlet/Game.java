@@ -18,6 +18,15 @@ public class Game extends HttpServlet {
     private int nTentativi=1;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        controllGame(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        sceltaProseguo(request, response);
+    }
+
+    private void controllGame(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
         String username = (String) request.getSession().getAttribute("username");
         String combination = request.getParameter("numero1");
         combination += "," + request.getParameter("numero2");
@@ -46,7 +55,8 @@ public class Game extends HttpServlet {
         }
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void sceltaProseguo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
         if(request.getParameter("scelta").equals("SI"))
         {
             response.sendRedirect("Ciclo");

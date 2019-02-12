@@ -15,6 +15,11 @@ public class Ciclo extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       controlloTentativi(request,response);
+    }
+
+    private void controlloTentativi(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
         if(contatore>0)
         {
             contatore --;
@@ -22,7 +27,6 @@ public class Ciclo extends HttpServlet {
             request.getRequestDispatcher("jsp/game.jsp").include(request,response);
         }else
         {
-            //System.out.println("Hai finito i tentativi!");
             request.getRequestDispatcher("jsp/saluti.jsp").include(request,response);
         }
     }
