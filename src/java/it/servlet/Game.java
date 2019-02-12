@@ -32,7 +32,7 @@ public class Game extends HttpServlet {
         combination += "," + request.getParameter("numero2");
         combination += "," + request.getParameter("numero3");
         System.out.println("La combination è: "+combination);
-        if(Ciclo.contatore == 4 ) {
+        if(Ciclo.contatore == 4 ) { //=4 se nel ciclo il contatore è impostato a 5
             this.controller = Context.getInstance().getController();
             this.controller.setUsername(username);
             this.controller.creaCombinazione();

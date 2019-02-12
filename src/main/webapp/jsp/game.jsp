@@ -2,7 +2,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
     <h2>Ciao <%= request.getSession().getAttribute("username")%></h2>
     <br>
 </head>
