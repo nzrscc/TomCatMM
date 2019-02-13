@@ -17,7 +17,7 @@ public class CombinationModel {
     public void setUsername(String username)
     {
         this.username=username;
-        System.out.println(username);
+        //System.out.println(username);
     }
 
     public void popolaTabella(int [] soluzione)

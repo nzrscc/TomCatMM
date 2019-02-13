@@ -48,10 +48,10 @@ public class Game extends HttpServlet {
         request.setAttribute("input", Arrays.toString(this.controller.getInput()));
         if(this.controller.getEsito()[0]<3)
         {
-            request.getRequestDispatcher("jsp/result.jsp").forward(request,response);
+            request.getRequestDispatcher("jsp/result.jsp").include(request,response);
         }else
         {
-            request.getRequestDispatcher("jsp/vittoria.jsp").forward(request,response);
+            request.getRequestDispatcher("jsp/vittoria.jsp").include(request,response);
         }
     }
 
@@ -65,4 +65,5 @@ public class Game extends HttpServlet {
             request.getRequestDispatcher("jsp/saluti.jsp").include(request,response);
         }
     }
+
 }
