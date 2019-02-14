@@ -1,8 +1,6 @@
 package it.controllers;
 
-import it.services.CombinationService;
 import it.services.TentativeService;
-import it.services.TryService;
 import it.services.UserService;
 
 public class ControllerClassifiche {
@@ -11,6 +9,7 @@ public class ControllerClassifiche {
 
     public ControllerClassifiche(UserService userService, TentativeService tentativeService) {
         this.userService=userService;
+        this.tentativeService=tentativeService;
     }
 
     public boolean classificaUser()
@@ -22,7 +21,6 @@ public class ControllerClassifiche {
     public boolean classificaTentativi()
     {
         this.tentativeService.prendiArrayList();
-
         return true;
     }
 

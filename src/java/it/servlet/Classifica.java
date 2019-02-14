@@ -20,10 +20,16 @@ public class Classifica extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("Sono nel doGet di CLassifica");
         this.controllerClassifiche= Context.getInstance().getControllerClassifiche();
-        this.controllerClassifiche.classificaUser();
-             //da richiamare classifica e basta!!
-
+        if(request.getSession().getAttribute("scelta").equals("Classifica User"))
+        {
+            this.controllerClassifiche.classificaUser();
+        }else if(request.getSession().getAttribute("scelta").equals("Classifica Tentativi"))
+        {
+            this.controllerClassifiche.classificaTentativi();
+        }else
+        {
+            response.sendRedirect("Start");
+        }
     }
 }

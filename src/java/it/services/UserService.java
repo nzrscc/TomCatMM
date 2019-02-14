@@ -17,6 +17,7 @@ public class UserService implements ClassificheService {
         this.tryService=tryService;
     }
 
+    @Override
     public ArrayList<UserDTO> prendiArrayList()
     {
         ArrayList<UserDTO> dtos = new ArrayList<>();

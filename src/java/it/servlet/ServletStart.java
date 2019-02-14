@@ -23,17 +23,21 @@ public class ServletStart extends HttpServlet {
 
     private void setUsername(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException
     {
-        String username=request.getParameter("username");
+
         String scelta=request.getParameter("scelta");
-        request.getSession().setAttribute("username", username);
-        System.out.println("Scelta= "+scelta);
-        //request.getSession().setAttribute("scelta", scelta);
+        request.getSession().setAttribute("scelta", scelta);
         if(scelta.equals("MasterMind"))
         {
+            System.out.println("Sono in master");
+            String username=request.getParameter("username");
+            request.getSession().setAttribute("username", username);
             response.sendRedirect("Ciclo");
-        }else if(scelta.equals("Classifica"))
+        }else
         {
+            System.out.println("Sono in classifica");
+            String username=request.getParameter("username");
             response.sendRedirect("Classifica");
         }
     }
 }
+

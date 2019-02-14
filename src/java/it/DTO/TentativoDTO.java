@@ -1,12 +1,12 @@
 package it.DTO;
 
 
-public class Tentativo implements Comparable{
+public class TentativoDTO implements Comparable{
     private String user;
     private int posEsatta;
     private int numEsatto;
     private String soluzione;
-    private int input;
+    private String input;
     private int nTentativi;
 
     public String getUser() {
@@ -41,11 +41,11 @@ public class Tentativo implements Comparable{
         this.soluzione = soluzione;
     }
 
-    public int getInput() {
+    public String getInput() {
         return input;
     }
 
-    public void setInput(int input) {
+    public void setInput(String input) {
         this.input = input;
     }
 
