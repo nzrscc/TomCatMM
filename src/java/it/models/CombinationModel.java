@@ -1,40 +1,58 @@
 package it.models;
 
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.Scanner;
 
 public class CombinationModel {
-    private Dao instanceDao;
+    private int id;
     private String username;
-    private String timeStamp;
 
-    public CombinationModel(Dao instanceDao) {
-        this.instanceDao=instanceDao;
+    public CombinationModel() {
     }
 
-    public void setUsername(String username)
-    {
-        this.username=username;
-        //System.out.println(username);
+    public CombinationModel(int id, String username, String soluzione, Date data) {
+        this.id = id;
+        this.username = username;
+        this.soluzione = soluzione;
+        this.data = data;
     }
 
-    public void popolaTabella(int [] soluzione)
-    {
-        Scanner in=new Scanner(System.in);
-        this.timeStamp = new SimpleDateFormat("dd.MM.yyyy - HH.mm.ss").format(new Date());
-        StringBuilder sql = new StringBuilder();
-        sql.append("INSERT INTO COMBINATION (ID, User, Soluzione, Data_Operazione) VALUES ('0','");
-        sql.append(this.username);
-        sql.append("','");
-        sql.append(Arrays.toString(soluzione));
-        sql.append("','");
-        sql.append(this.timeStamp);
-        sql.append("')");
-        /*String sql = "INSERT INTO COMBINATION (ID, User, Soluzione, Data_Operazione) " +
-                "VALUES " +
-                "('0', '"+ this.username + "', '" + Arrays.toString(soluzione) +  "', '" + this.timeStamp + "')";*/
-        instanceDao.popolaTabella(sql);
+    private String soluzione;
+    private Date data;
+
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getSoluzione() {
+        return soluzione;
+    }
+
+    public void setSoluzione(String soluzione) {
+        this.soluzione = soluzione;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+// parametri tabella
+    // gettere and setter
+    // costruttore ()
+    // construttore (tutti i parametri)
 }

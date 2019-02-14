@@ -1,35 +1,65 @@
 package it.models;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TryModel  {
-    private Dao instanceDao;
-    private String timeStamp;
+public class TryModel {
+    private int idComb;
+    private int id;
+    private int posEsatta;
+    private int numEsatto;
+    private String input;
+    private Date data;
 
-    public TryModel(Dao instanceDao) {
-        this.instanceDao=instanceDao;
+    public int getIdComb() {
+        return idComb;
     }
 
-    public void popolaTabella(int tentativi, int posEsatta, int numEsatto, String numeri)
-    {
-        this.timeStamp = new SimpleDateFormat("dd.MM.yyyy - HH.mm.ss").format(new Date());
-        StringBuilder sql=new StringBuilder();
-        sql.append("INSERT INTO TRY (ID_COMB, ID, POS_ESATTA, NUM_ESATTO, VALORI_INSERITI, Data_Operazione) VALUES ('");
-        sql.append(instanceDao.prendiID());
-        sql.append("', '");
-        sql.append(tentativi);
-        sql.append("', '");
-        sql.append(posEsatta);
-        sql.append("', '");
-        sql.append(numEsatto);
-        sql.append("', '");
-        sql.append(numeri);
-        sql.append("', '");
-        sql.append(this.timeStamp);
-        sql.append("')");
-        /*String sql = "INSERT INTO TRY (ID, POS_ESATTA, NUM_ESATTO, VALORI_INSERITI, Data_Operazione) " +
-             "VALUES ('"+ tentativi + "', '" + posEsatta +  "', '" + numEsatto + "', '" + (numeri )+ "', '" + this.timeStamp + "')";*/
-        instanceDao.popolaTabella(sql);
+    public void setIdComb(int idComb) {
+        this.idComb = idComb;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getPosEsatta() {
+        return posEsatta;
+    }
+
+    public void setPosEsatta(int posEsatta) {
+        this.posEsatta = posEsatta;
+    }
+
+    public int getNumEsatto() {
+        return numEsatto;
+    }
+
+    public void setNumEsatto(int numEsatto) {
+        this.numEsatto = numEsatto;
+    }
+
+    public String getInput() {
+        return input;
+    }
+
+    public void setInput(String input) {
+        this.input = input;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    // parametri tabella
+    // gettere and setter
+    // costruttore ()
+    // construttore (tutti i parametri)
 }

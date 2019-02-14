@@ -11,7 +11,6 @@ public class Controller {
     private int[] soluzione=new int[3];
     private int[] input=new int[3];
     private int[] esito=new int[2];
-    private int MaxID=0;
 
     public int[] getSoluzione() {
         return soluzione;

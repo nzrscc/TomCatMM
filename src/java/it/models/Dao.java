@@ -71,7 +71,7 @@ public class Dao {
         return this.connection;
     }
 
-    public void popolaTabella(StringBuilder sql)
+    public void usaTabella(StringBuilder sql)
     {
         try
         {
@@ -86,7 +86,6 @@ public class Dao {
     public int prendiID()
     {
         int maxID=0;
-        String selezionata=null;
         try {
             ResultSet resultset = this.stmt.executeQuery("SELECT ID FROM  COMBINATION");
             while(resultset.next()){
@@ -97,5 +96,13 @@ public class Dao {
         System.out.println("Nel dao maxID= "+maxID);
         return maxID;
     }
+
+    public ResultSet prendiDaTabella(String sql) throws SQLException
+    {
+        ResultSet resultSet = this.stmt.executeQuery(sql);
+        return resultSet;
+
+    }
+
 
 }
