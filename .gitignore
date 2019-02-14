@@ -83,4 +83,5 @@ fabric.properties
 
 db.properties
 
-.idea/*
+.idea/compiler.xml
+.idea/misc.xml
