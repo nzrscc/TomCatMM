@@ -14,8 +14,8 @@
     <br><br><br>
     Cosa si vuole fare?
     <select name="scelta">
-        <option name="Classifica">Visualizzare le classifiche</option>
-        <option name="MasterMind">Giocare a MasterMind</option>
+        <option name="Classifica" value="Classifica">Visualizzare le classifiche</option>
+        <option name="MasterMind" value="MasterMind">Giocare a MasterMind</option>
     </select>
     <br><br>
     <button type="submit" name="invia">Invia</button>

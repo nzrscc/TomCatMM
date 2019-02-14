@@ -5,6 +5,9 @@ import java.util.Date;
 public class CombinationModel {
     private int id;
     private String username;
+    private String soluzione;
+    private Date data;
+
 
     public CombinationModel() {
     }
@@ -16,8 +19,6 @@ public class CombinationModel {
         this.data = data;
     }
 
-    private String soluzione;
-    private Date data;
 
     public int getId() {
         return id;

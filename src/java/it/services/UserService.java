@@ -28,7 +28,7 @@ public class UserService {
 
         while(it.hasNext())
         {
-            CombinationModel current = it.next();//da controllare ancora perdo il primo elemento
+            CombinationModel current = it.next();  //da controllare ancora perdo il primo elemento
 
             UserDTO dto = new UserDTO();
 
@@ -58,6 +58,6 @@ public class UserService {
                 }
             }
         }
-        return (contaSecondo*100/contaPrimo);
+        return ((contaSecondo*100)/contaPrimo);
     }
 }

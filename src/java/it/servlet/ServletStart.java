@@ -28,10 +28,10 @@ public class ServletStart extends HttpServlet {
         request.getSession().setAttribute("username", username);
         System.out.println("Scelta= "+scelta);
         //request.getSession().setAttribute("scelta", scelta);
-        if(scelta.equals("Giocare a MasterMind"))
+        if(scelta.equals("MasterMind"))
         {
             response.sendRedirect("Ciclo");
-        }else if(scelta.equals("Visualizzare le classifiche"))
+        }else if(scelta.equals("Classifica"))
         {
             response.sendRedirect("Classifica");
         }
