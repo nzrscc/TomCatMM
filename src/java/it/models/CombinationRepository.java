@@ -49,7 +49,7 @@ public class CombinationRepository implements Repository{
                 ob.setId(set.getInt(1));
                 ob.setUsername(set.getString(2));
                 ob.setSoluzione(set.getString(3));
-                ob.setData(set.getDate(4));
+                ob.setData(set.getString(4));
                 combinationModelArrayList.add(ob);
             }
 

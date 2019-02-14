@@ -1,6 +1,6 @@
 package it.services;
 
-import it.DTO.UserDTO;
+import it.DTO.Tentativo;
 import it.models.CombinationModel;
 import it.models.TryModel;
 import it.services.utils.ClassificheService;
@@ -8,18 +8,18 @@ import it.services.utils.ClassificheService;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class UserService implements ClassificheService {
+public class TentativeService implements ClassificheService {
+
     private CombinationService combinationService;
     private TryService tryService;
-
-    public UserService(CombinationService combinationService, TryService tryService) {
+    public TentativeService(CombinationService combinationService, TryService tryService) {
         this.combinationService=combinationService;
         this.tryService=tryService;
     }
 
-    public ArrayList<UserDTO> prendiArrayList()
+    public ArrayList<Tentativo> prendiArrayList()
     {
-        ArrayList<UserDTO> dtos = new ArrayList<>();
+        ArrayList<Tentativo> dtos = new ArrayList<>();
 
         ArrayList<CombinationModel> combinationList =combinationService.getArrayListModel();
 
@@ -31,20 +31,20 @@ public class UserService implements ClassificheService {
         {
             CombinationModel current = it.next();  //da controllare ancora perdo il primo elemento
 
-            UserDTO dto = new UserDTO();
+            Tentativo dto = new Tentativo();
 
-            dto.setID(current.getId());
+            /*dto.setID(current.getId());
             dto.setNome(current.getUsername());
             dto.setPunteggio(this.calcolaPunteggio(tryList,current.getId()));
             System.out.println("ID= "+current.getId()+" "+dto.getID()+"\tNome= "+current.getUsername()+" "+dto.getNome()+"\tsetPunteggio= "+dto.getPunteggio());
-            dtos.add(dto);
+            dtos.add(dto);*/
         }
 
         return dtos;
     }
 
     public double calcolaPunteggio(ArrayList<TryModel> list, int id){
-        Iterator<TryModel> it= list.iterator();
+        /*Iterator<TryModel> it= list.iterator();
         int contaPrimo=0;
         int contaSecondo=0;
         while(it.hasNext())
@@ -63,8 +63,9 @@ public class UserService implements ClassificheService {
         {
             return((contaSecondo*100)/contaPrimo);
         }else
-        {
+        {*/
             return 0;
-        }
+        /*
+        }*/
     }
 }

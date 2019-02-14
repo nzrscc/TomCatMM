@@ -5,10 +5,7 @@ import it.controllers.ControllerClassifiche;
 import it.models.CombinationRepository;
 import it.models.Dao;
 import it.models.TryRepository;
-import it.services.CombinationService;
-import it.services.TryService;
-import it.services.UserService;
-import it.services.ValidatorService;
+import it.services.*;
 import it.services.utils.Checker;
 import it.services.utils.CheckerMasterMind;
 
@@ -34,9 +31,10 @@ public class Context {
         CombinationRepository combinationRepository =new CombinationRepository(instanceDao);
         CombinationService combinationService=new CombinationService(combinationRepository, checkerMasterMind);
         TryService tryService=new TryService(tryRepository);
+        TentativeService tentativeService=new TentativeService(combinationService, tryService);
         UserService userService=new UserService(combinationService, tryService);
         ValidatorService validatorService=new ValidatorService();
-        this.controllerClassifiche=new ControllerClassifiche(userService,tryService,combinationService);
+        this.controllerClassifiche=new ControllerClassifiche(userService, tentativeService);
         this.controller=new Controller(validatorService, combinationService, tryService);
     }
 

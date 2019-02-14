@@ -18,7 +18,7 @@ public class ServletStart extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request,response);
     }
 
     private void setUsername(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException

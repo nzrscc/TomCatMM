@@ -6,13 +6,13 @@ public class CombinationModel {
     private int id;
     private String username;
     private String soluzione;
-    private Date data;
+    private String data;
 
 
     public CombinationModel() {
     }
 
-    public CombinationModel(int id, String username, String soluzione, Date data) {
+    public CombinationModel(int id, String username, String soluzione, String data) {
         this.id = id;
         this.username = username;
         this.soluzione = soluzione;
@@ -44,11 +44,11 @@ public class CombinationModel {
         this.soluzione = soluzione;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 

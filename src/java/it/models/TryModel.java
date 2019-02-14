@@ -8,7 +8,7 @@ public class TryModel {
     private int posEsatta;
     private int numEsatto;
     private String input;
-    private Date data;
+    private String data;
 
     public int getIdComb() {
         return idComb;
@@ -50,11 +50,11 @@ public class TryModel {
         this.input = input;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 

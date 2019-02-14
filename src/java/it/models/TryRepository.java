@@ -51,7 +51,7 @@ public class TryRepository implements Repository {
                 ob.setPosEsatta(set.getInt(3));
                 ob.setNumEsatto(set.getInt(4));
                 ob.setInput(set.getString(5));
-                ob.setData(set.getDate(6));
+                ob.setData(set.getString(6));
                 tryModelArrayList.add(ob);
             }
         }catch (SQLException se)
