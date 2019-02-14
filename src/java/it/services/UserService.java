@@ -28,7 +28,7 @@ public class UserService {
 
         while(it.hasNext())
         {
-            CombinationModel current = it.next();//da controllare ancora perdo il primo
+            CombinationModel current = it.next();//da controllare ancora perdo il primo elemento
 
             UserDTO dto = new UserDTO();
 
@@ -44,12 +44,20 @@ public class UserService {
 
     private double calcolaPunteggio(ArrayList<TryModel> list, int id){
         Iterator<TryModel> it= list.iterator();
+        int contaPrimo=0;
+        int contaSecondo=0;
         while(it.hasNext())
         {
             TryModel current=it.next();
-
-
+            if(current.getIdComb()==id)
+            {
+                contaPrimo++;
+                if(current.getPosEsatta()==3)
+                {
+                    contaSecondo++;
+                }
+            }
         }
-        return 4.0;
+        return (contaSecondo*100/contaPrimo);
     }
 }
