@@ -24,10 +24,9 @@ public class CombinationRepository implements Repository{
 
     public void popolaTabella(int [] soluzione)
     {
-        Scanner in=new Scanner(System.in);
         this.timeStamp = new SimpleDateFormat("dd.MM.yyyy - HH.mm.ss").format(new Date());
         StringBuilder sql = new StringBuilder();
-        sql.append("INSERT INTO COMBINATION (ID, UserDTO, Soluzione, Data_Operazione) VALUES ('0','");
+        sql.append("INSERT INTO COMBINATION (ID, User, Soluzione, Data_Operazione) VALUES ('0','");
         sql.append(this.username);
         sql.append("','");
         sql.append(Arrays.toString(soluzione));
