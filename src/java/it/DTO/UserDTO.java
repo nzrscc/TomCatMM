@@ -1,7 +1,9 @@
 package it.DTO;
 
 
-public class UserDTO implements Comparable {
+import it.services.utils.ToComparator;
+
+public class UserDTO implements Comparable<UserDTO>, ToComparator {
 
     private int ID;
     private String nome;
@@ -11,6 +13,7 @@ public class UserDTO implements Comparable {
 
     }
 
+    @Override
     public int getID() {
         return ID;
     }
@@ -36,7 +39,9 @@ public class UserDTO implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(UserDTO dto) {
+        int result;
+        result= Integer.parseInt(String.valueOf(this.punteggio-dto.punteggio));
+        return result;
     }
 }

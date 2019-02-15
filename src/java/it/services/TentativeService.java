@@ -30,10 +30,8 @@ public class TentativeService implements ClassificheService {
         ArrayList<TryModel> tryList= tryService.getArrayListModel();
 
         Iterator<TryModel> it = tryList.iterator();
-        System.out.println("sono prima del while");
         while(it.hasNext())
         {
-            System.out.println("Ci sono");
             TryModel current=it.next();
             TentativoDTO dto = new TentativoDTO();
             id=(current.getIdComb());
@@ -57,7 +55,7 @@ public class TentativeService implements ClassificheService {
         while(it.hasNext()) {
             CombinationModel current = it.next();
             if (current.getId() == id) {
-                return current.getUsername();
+                return current.getUsername();  //ne prende solo uno e si ferma
             }
         }
         return null;

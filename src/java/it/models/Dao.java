@@ -53,7 +53,7 @@ public class Dao {
                     " User VARCHAR(20), Soluzione VARCHAR(20), Data_Operazione VARCHAR(30))");
             this.stmt.executeUpdate("CREATE TABLE IF NOT EXISTS TRY (ID_COMB INTEGER ," +
                   " ID INTEGER , POS_ESATTA INTEGER, NUM_ESATTO INTEGER, VALORI_INSERITI VARCHAR(20)," +
-                    " Data_Operazione VARCHAR(30), PRIMARY KEY (ID, Data_operazione), FOREIGN KEY (ID_COMB) REFERENCES COMBINATION(ID))");
+                    " Data_Operazione VARCHAR(30), PRIMARY KEY (Data_operazione), FOREIGN KEY (ID_COMB) REFERENCES COMBINATION(ID))");
             System.out.println("Accesso alla tabella!");
 
         } catch (SQLException se) {

@@ -1,7 +1,9 @@
 package it.DTO;
 
 
-public class TentativoDTO implements Comparable{
+import it.services.utils.ToComparator;
+
+public class TentativoDTO implements Comparable<TentativoDTO>, ToComparator {
     private String user;
     private int posEsatta;
     private int numEsatto;
@@ -58,7 +60,14 @@ public class TentativoDTO implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(TentativoDTO dto) {
         return 0;
+    }
+
+    @Override
+    public int getID() {
+        int result;
+        result= this.nTentativi-nTentativi;
+        return result;
     }
 }

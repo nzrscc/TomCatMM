@@ -1,7 +1,5 @@
 package it.models;
 
-import java.util.Date;
-
 public class TryModel {
     private int idComb;
     private int id;

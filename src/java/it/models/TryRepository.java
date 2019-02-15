@@ -31,8 +31,6 @@ public class TryRepository implements Repository {
         sql.append("', '");
         sql.append(this.timeStamp);
         sql.append("')");
-        /*String sql = "INSERT INTO TRY (ID, POS_ESATTA, NUM_ESATTO, VALORI_INSERITI, Data_Operazione) " +
-             "VALUES ('"+ tentativi + "', '" + posEsatta +  "', '" + numEsatto + "', '" + (numeri )+ "', '" + this.timeStamp + "')";*/
         instanceDao.usaTabella(sql);
     }
 
@@ -41,7 +39,7 @@ public class TryRepository implements Repository {
         ResultSet set;
         ArrayList<TryModel> tryModelArrayList = new ArrayList<>();
         try{
-            String sql="SELECT * FROM TRY";
+            String sql="SELECT * FROM TRY ORDER BY ID_COMB";
             set=instanceDao.prendiDaTabella(sql);
             while (set.next())
             {

@@ -6,6 +6,7 @@ import it.models.TryModel;
 import it.services.utils.ClassificheService;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class UserService implements ClassificheService {
@@ -30,7 +31,7 @@ public class UserService implements ClassificheService {
 
         while(it.hasNext())
         {
-            CombinationModel current = it.next();  //da controllare ancora perdo il primo elemento
+            CombinationModel current = it.next();
 
             UserDTO dto = new UserDTO();
 
@@ -40,7 +41,7 @@ public class UserService implements ClassificheService {
             System.out.println("ID= "+current.getId()+" "+dto.getID()+"\tNome= "+current.getUsername()+" "+dto.getNome()+"\tsetPunteggio= "+dto.getPunteggio());
             dtos.add(dto);
         }
-
+        Collections.sort(dtos);
         return dtos;
     }
 
