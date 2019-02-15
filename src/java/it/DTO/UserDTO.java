@@ -7,15 +7,10 @@ public class UserDTO implements Comparable<UserDTO>, ToComparator {
 
     private int ID;
     private String nome;
-    private double punteggio;
+    private int punteggio;
 
     public UserDTO() {
 
-    }
-
-    @Override
-    public int getID() {
-        return ID;
     }
 
     public void setID(int ID) {
@@ -30,18 +25,31 @@ public class UserDTO implements Comparable<UserDTO>, ToComparator {
         this.nome = nome;
     }
 
-    public double getPunteggio() {
+    public int getPunteggio() {
         return punteggio;
     }
 
-    public void setPunteggio(double punteggio) {
+    public void setPunteggio(int punteggio) {
         this.punteggio = punteggio;
     }
 
     @Override
+    public int getID() {
+        return ID;
+    }
+
+    @Override
     public int compareTo(UserDTO dto) {
-        int result;
-        result= Integer.parseInt(String.valueOf(this.punteggio-dto.punteggio));
-        return result;
+        //return Integer.parseInt(String.valueOf(this.punteggio))-Integer.parseInt(String.valueOf(dto.punteggio));
+        return dto.punteggio-this.punteggio;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "ID=" + ID +
+                ", nome='" + nome + '\'' +
+                ", punteggio=" + punteggio +
+                '}';
     }
 }

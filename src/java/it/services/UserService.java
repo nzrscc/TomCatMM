@@ -38,14 +38,19 @@ public class UserService implements ClassificheService {
             dto.setID(current.getId());
             dto.setNome(current.getUsername());
             dto.setPunteggio(this.calcolaPunteggio(tryList,current.getId()));
-            System.out.println("ID= "+current.getId()+" "+dto.getID()+"\tNome= "+current.getUsername()+" "+dto.getNome()+"\tsetPunteggio= "+dto.getPunteggio());
             dtos.add(dto);
         }
         Collections.sort(dtos);
+        System.out.println(dtos.toString());
+        /*while(it2.hasNext())
+        {
+            it2.next();
+            System.out.println("ID= "+dtos.get(1)+"\tNome= "+dtos.get(2)+"\tsetPunteggio= "+dtos.get(3));
+        }*/
         return dtos;
     }
 
-    public double calcolaPunteggio(ArrayList<TryModel> list, int id){
+    public int calcolaPunteggio(ArrayList<TryModel> list, int id){
         Iterator<TryModel> it= list.iterator();
         int contaPrimo=0;
         int contaSecondo=0;

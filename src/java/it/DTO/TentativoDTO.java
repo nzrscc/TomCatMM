@@ -4,12 +4,17 @@ package it.DTO;
 import it.services.utils.ToComparator;
 
 public class TentativoDTO implements Comparable<TentativoDTO>, ToComparator {
+    private int IDComb;
     private String user;
     private int posEsatta;
     private int numEsatto;
     private String soluzione;
     private String input;
     private int nTentativi;
+
+    public void setIDComb(int IDComb) {
+        this.IDComb = IDComb;
+    }
 
     public String getUser() {
         return user;
@@ -60,14 +65,25 @@ public class TentativoDTO implements Comparable<TentativoDTO>, ToComparator {
     }
 
     @Override
-    public int compareTo(TentativoDTO dto) {
-        return 0;
+    public int getID() {
+        return this.IDComb;
     }
 
     @Override
-    public int getID() {
-        int result;
-        result= this.nTentativi-nTentativi;
-        return result;
+    public int compareTo(TentativoDTO dto) {
+        return this.nTentativi-nTentativi;
+    }
+
+    @Override
+    public String toString() {
+        return "TentativoDTO{" +
+                "IDComb=" + IDComb +
+                ", user='" + user + '\'' +
+                ", posEsatta=" + posEsatta +
+                ", numEsatto=" + numEsatto +
+                ", soluzione='" + soluzione + '\'' +
+                ", input='" + input + '\'' +
+                ", nTentativi=" + nTentativi +
+                '}';
     }
 }

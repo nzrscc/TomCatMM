@@ -6,6 +6,8 @@ import it.models.TryModel;
 import it.services.utils.ClassificheService;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class TentativeService implements ClassificheService {
@@ -21,8 +23,6 @@ public class TentativeService implements ClassificheService {
     @Override
     public ArrayList<TentativoDTO> prendiArrayList()
     {
-        int id;
-
         ArrayList<TentativoDTO> dtos = new ArrayList<>();
 
         ArrayList<CombinationModel> combinationList =combinationService.getArrayListModel();
@@ -34,18 +34,19 @@ public class TentativeService implements ClassificheService {
         {
             TryModel current=it.next();
             TentativoDTO dto = new TentativoDTO();
-            id=(current.getIdComb());
+            dto.setIDComb(current.getIdComb());
             dto.setPosEsatta(current.getPosEsatta());
             dto.setNumEsatto(current.getNumEsatto());
             dto.setInput(current.getInput());
             dto.setnTentativi(current.getId());
-            dto.setUser(this.prendiUser(combinationList, id));
-            dto.setSoluzione(this.prendiSoluzione(combinationList,id));
+            dto.setUser(this.prendiUser(combinationList, dto.getID()));
+            dto.setSoluzione(this.prendiSoluzione(combinationList, dto.getID()));
             dtos.add(dto);
             System.out.println("User= "+ dto.getUser()+" nTentativi= "+current.getId()+" "+"\tPosEsatta= "+current.getPosEsatta()+"\tNumEsatto= "+current.getNumEsatto()
                     +"\tSoluzione= "+dto.getSoluzione()+"\tInput= "+current.getInput());
         }
-
+        Collections.sort(dtos);
+        System.out.println(dtos.toString());
         return dtos;
     }
 

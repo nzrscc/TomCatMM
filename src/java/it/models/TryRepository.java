@@ -39,7 +39,7 @@ public class TryRepository implements Repository {
         ResultSet set;
         ArrayList<TryModel> tryModelArrayList = new ArrayList<>();
         try{
-            String sql="SELECT * FROM TRY ORDER BY ID_COMB";
+            String sql="SELECT * FROM TRY ORDER BY ID_COMB, ID ";
             set=instanceDao.prendiDaTabella(sql);
             while (set.next())
             {

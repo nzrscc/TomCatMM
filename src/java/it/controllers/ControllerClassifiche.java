@@ -1,7 +1,11 @@
 package it.controllers;
 
+import java.util.Comparator;
+import it.DTO.UserDTO;
 import it.services.TentativeService;
 import it.services.UserService;
+
+
 
 public class ControllerClassifiche {
     private UserService userService;
@@ -14,9 +18,10 @@ public class ControllerClassifiche {
 
     public boolean classificaUser()
     {
+        //this.userService.prendiArrayList().sort((Comparator<? super UserDTO>) this.userService.prendiArrayList());
         this.userService.prendiArrayList();
         return true;
-    }//metodo per classifica che continene al suo interno i vari metodi
+    }
 
     public boolean classificaTentativi()
     {

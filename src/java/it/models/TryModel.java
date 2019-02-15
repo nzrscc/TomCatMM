@@ -56,8 +56,4 @@ public class TryModel {
         this.data = data;
     }
 
-    // parametri tabella
-    // gettere and setter
-    // costruttore ()
-    // construttore (tutti i parametri)
 }

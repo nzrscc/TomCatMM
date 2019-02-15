@@ -2,7 +2,6 @@ package it.servlet;
 
 import it.Context;
 import it.controllers.ControllerClassifiche;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,13 +22,15 @@ public class Classifica extends HttpServlet {
         this.controllerClassifiche= Context.getInstance().getControllerClassifiche();
         if(request.getSession().getAttribute("scelta").equals("Classifica User"))
         {
-            this.controllerClassifiche.classificaUser();
+            request.getRequestDispatcher("jsp/classificaUser.jsp").include(request,response);
+            request.setAttribute("classificaUser",this.controllerClassifiche.classificaUser());
         }else if(request.getSession().getAttribute("scelta").equals("Classifica Tentativi"))
         {
+            request.getRequestDispatcher("jsp/classificaTentativi.jsp").include(request,response);
             this.controllerClassifiche.classificaTentativi();
         }else
         {
-            response.sendRedirect("Start");
+            response.sendRedirect("Start"); //nel caso sbaglio
         }
     }
 }
