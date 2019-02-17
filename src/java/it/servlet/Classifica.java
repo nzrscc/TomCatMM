@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet("/Classifica")
 public class Classifica extends HttpServlet {
@@ -22,12 +23,12 @@ public class Classifica extends HttpServlet {
         this.controllerClassifiche= Context.getInstance().getControllerClassifiche();
         if(request.getSession().getAttribute("scelta").equals("Classifica User"))
         {
+            request.getSession().setAttribute("classificaUser", this.controllerClassifiche.classificaUser());
             request.getRequestDispatcher("jsp/classificaUser.jsp").include(request,response);
-            request.setAttribute("classificaUser",this.controllerClassifiche.classificaUser());
         }else if(request.getSession().getAttribute("scelta").equals("Classifica Tentativi"))
         {
+            request.getSession().setAttribute("classificaTentativi", this.controllerClassifiche.classificaTentativi());
             request.getRequestDispatcher("jsp/classificaTentativi.jsp").include(request,response);
-            this.controllerClassifiche.classificaTentativi();
         }else
         {
             response.sendRedirect("Start"); //nel caso sbaglio

@@ -1,10 +1,11 @@
 package it.controllers;
 
-import java.util.Comparator;
+import it.DTO.TentativoDTO;
 import it.DTO.UserDTO;
 import it.services.TentativeService;
 import it.services.UserService;
 
+import java.util.ArrayList;
 
 
 public class ControllerClassifiche {
@@ -16,17 +17,15 @@ public class ControllerClassifiche {
         this.tentativeService=tentativeService;
     }
 
-    public boolean classificaUser()
+    public ArrayList<UserDTO> classificaUser()
     {
         //this.userService.prendiArrayList().sort((Comparator<? super UserDTO>) this.userService.prendiArrayList());
-        this.userService.prendiArrayList();
-        return true;
+        return this.userService.prendiArrayList();
     }
 
-    public boolean classificaTentativi()
+    public ArrayList<TentativoDTO> classificaTentativi()
     {
-        this.tentativeService.prendiArrayList();
-        return true;
+        return this.tentativeService.prendiArrayList();
     }
 
 

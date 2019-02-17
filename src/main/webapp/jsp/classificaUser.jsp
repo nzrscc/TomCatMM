@@ -1,31 +1,28 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="it.DTO.UserDTO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <%
-    ArrayList<UserDTO> list = (ArrayList<UserDTO>) request.getAttribute("servletName");
+    ArrayList<UserDTO> list = (ArrayList<UserDTO>) request.getSession().getAttribute("classificaUser");
 %>
 <head>
     <title>ClassificaUser</title>
 </head>
 <body>
 Classifica User:
-<table>
-    <tbody>
-        <% for(int i=0;i<list.size();i++){;
-                UserDTO user=new UserDTO();
-                user=list.get(i);
-        %>
-        <tr>
-            <td><%=user.getID()%></td>
-            <td><%=user.getNome()%></td>
-            <td><%=user.getPunteggio()%></td>
-        </tr>
-        <%
-        };
-        %>
-    </tbody>
-</table>
+<br><br>
+<% int i=0;%>
+<%
+    for (i=0; i<list.size(); i++)
+    {
+        out.println(list.get(i).getID()); %> &nbsp;&nbsp;
+<%        out.println(list.get(i).getNome()); %> &nbsp;&nbsp;
+<%        out.println(list.get(i).getPunteggio()); %>
+
+<br>
+<%    }
+%>
 </body>
 </html>
 

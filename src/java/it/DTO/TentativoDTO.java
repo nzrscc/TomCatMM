@@ -16,6 +16,10 @@ public class TentativoDTO implements Comparable<TentativoDTO>, ToComparator {
         this.IDComb = IDComb;
     }
 
+    public int getIDComb() {
+        return IDComb;
+    }
+
     public String getUser() {
         return user;
     }

@@ -41,7 +41,7 @@ public class UserService implements ClassificheService {
             dtos.add(dto);
         }
         Collections.sort(dtos);
-        System.out.println(dtos.toString());
+        //System.out.println(dtos.toString());
         /*while(it2.hasNext())
         {
             it2.next();
