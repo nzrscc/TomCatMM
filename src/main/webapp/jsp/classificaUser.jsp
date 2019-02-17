@@ -13,16 +13,24 @@
 Classifica User:
 <br><br>
 <% int i=0;%>
-<%
-    for (i=0; i<list.size(); i++)
-    {
-        out.println(list.get(i).getID()); %> &nbsp;&nbsp;
-<%        out.println(list.get(i).getNome()); %> &nbsp;&nbsp;
-<%        out.println(list.get(i).getPunteggio()); %>
 
-<br>
-<%    }
-%>
+<table> <!– Inizia la tabella –>
+    <table border=”1″>
+    <tr> <!– Inizia la prima riga –>
+        <td>ID</td> <!– Prima colonna –>
+        <td>Username</td> <!– Seconda colonna –>
+        <td>Punteggio</td> <!– Terza colonna –>
+    </tr> <!– Fine della prima riga –>
+    <%
+        for (i=0; i<list.size(); i++)
+        {
+            %> <tr>
+                <td><%out.println(list.get(i).getID()); %> </td>
+                 <td><%out.println(list.get(i).getNome()); %> </td>
+                 <td><%out.println(list.get(i).getPunteggio()); %> </td>
+    </tr>
+<% } %>
+</table> <!– Fine della tabella –>
 </body>
 </html>
 
