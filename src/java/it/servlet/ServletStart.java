@@ -14,18 +14,19 @@ public class ServletStart extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        setUsername(request,response);
+        String scelta=request.getParameter("scelta");
+        request.getSession().setAttribute("scelta", scelta);
+        scelta(request,response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().setAttribute("scelta", "MasterMind");
         doGet(request,response);
     }
 
-    private void setUsername(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException
+    private void scelta(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException
     {
-
-        String scelta=request.getParameter("scelta");
-        request.getSession().setAttribute("scelta", scelta);
+        String scelta= (String) request.getSession().getAttribute("scelta");
         if(scelta.equals("MasterMind"))
         {
             request.getRequestDispatcher("jsp/logIn.jsp").include(request,response);

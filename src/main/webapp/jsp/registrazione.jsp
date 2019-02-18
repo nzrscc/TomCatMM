@@ -6,5 +6,9 @@
 </head>
 <body>
 Registrazione effettuata!!
+<br><br>
+<form action="<%=request.getContextPath()+"/Start" %>" method="get">
+    <button type="submit" name="accedi"value="accedi">Accedi</button>
+</form>
 </body>
 </html>

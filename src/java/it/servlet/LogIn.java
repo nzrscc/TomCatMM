@@ -19,8 +19,8 @@ public class LogIn extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("Registrati= "+request.getParameterMap().containsKey("registrati"));
-        System.out.println("Accedi= "+request.getParameterMap().containsKey("accedi"));
+        //System.out.println("Registrati= "+request.getParameterMap().containsKey("registrati"));
+        //System.out.println("Accedi= "+request.getParameterMap().containsKey("accedi"));
         if(request.getParameterMap().containsKey("registrati"))
         {
             this.registrati(request,response);
@@ -33,10 +33,8 @@ public class LogIn extends HttpServlet {
     protected void controllo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         this.controller= Context.getInstance().getController();
-        //boolean controllo=this.controller.controlloUtente(request.getParameter("user"), request.getParameter("passwd"));
         String username=request.getParameter("userId");
         String passwd=request.getParameter("passwd");
-        //System.out.println(username+"\t"+passwd);
         if(this.controller.controlloUtente(username,passwd))
         {
             request.getSession().setAttribute("username", username);

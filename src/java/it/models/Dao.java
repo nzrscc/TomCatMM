@@ -95,7 +95,6 @@ public class Dao {
         }catch (SQLException se) {
             se.printStackTrace();
         }
-        System.out.println("Nel dao maxID= "+maxID);
         return maxID;
     }
 

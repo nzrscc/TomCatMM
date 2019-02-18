@@ -33,7 +33,7 @@ public class Game extends HttpServlet {
         String combination = request.getParameter("numero1");
         combination += "," + request.getParameter("numero2");
         combination += "," + request.getParameter("numero3");
-        System.out.println("La combination è: "+combination);
+        //System.out.println("La combination è: "+combination);
         if(Ciclo.contatore == 4 ) { //=4 se nel ciclo il contatore è impostato a 5
             this.controller = Context.getInstance().getController();
             this.controller.setUsername(username);

@@ -9,9 +9,7 @@
 </head>
 <body>
 <form action="<%=request.getContextPath()+"/Start" %>" method="get">
-    <label for="username">Username</label>
-    <input type="text" name="username" value="">
-    <br><br><br>
+    <br>
     Cosa si vuole fare?
     <select name="scelta">
         <option name="MasterMind" value="MasterMind">Giocare a MasterMind</option>

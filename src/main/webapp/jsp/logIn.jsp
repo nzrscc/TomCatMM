@@ -6,7 +6,6 @@
 <head>
 </head>
 <body>
-<br><br>
 Autenticazione:
 <br><br>
 <form action="<%=request.getContextPath()+"/LogIn" %>"method="get">
@@ -16,7 +15,8 @@ Autenticazione:
     <label for="passwd">Password </label>
     <input type="password" name="passwd" value="">
     <br><br>
-    <button type="submit" name="accedi"value="accedi">Accedi</button>
+    <button type="submit" name="accedi"value="accedi">Accedi</button> <br>
+    <br>
     <button type="submit" name="registrati"value="registrati">Registrati</button>
 </form>
 </body>

@@ -6,7 +6,6 @@ import it.models.Dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 public class LogService {
@@ -21,7 +20,6 @@ public class LogService {
     public boolean controlloUtente(String username, String password)
     {
         ResultSet set;
-        ArrayList<LogDTO> logDTOS=new ArrayList<>();
         try{
             String sql="SELECT * FROM LOGIN";
             set=instanceDao.prendiDaTabella(sql);
@@ -29,15 +27,17 @@ public class LogService {
             {
                 LogDTO log=new LogDTO();
                 log.setUsername(set.getString(2));
-                 if(username.equals(log.getUsername()));
-                {
+                 if(username.equals(log.getUsername()))
+                 {
                     log.setPassword(set.getString(3));
                     if (password.equals(log.getPassword())) {
                         return true;
-                    } else {
+                    }else {
                         return false;
                     }
-                }
+                }else{
+
+            }
 
             }
         }catch(SQLException se)
