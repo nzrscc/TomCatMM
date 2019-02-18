@@ -54,6 +54,8 @@ public class Dao {
             this.stmt.executeUpdate("CREATE TABLE IF NOT EXISTS TRY (ID_COMB INTEGER ," +
                   " ID INTEGER , POS_ESATTA INTEGER, NUM_ESATTO INTEGER, VALORI_INSERITI VARCHAR(20)," +
                     " Data_Operazione VARCHAR(30), PRIMARY KEY (Data_operazione), FOREIGN KEY (ID_COMB) REFERENCES COMBINATION(ID))");
+            this.stmt.executeUpdate("CREATE TABLE IF NOT EXISTS LOGIN (ID INTEGER PRIMARY KEY AUTO_INCREMENT, Username VARCHAR(15)," +
+                    " Password VARCHAR(20), Data_Registrazione VARCHAR(30))");
             System.out.println("Accesso alla tabella!");
 
         } catch (SQLException se) {
@@ -100,6 +102,7 @@ public class Dao {
     public ResultSet prendiDaTabella(String sql) throws SQLException
     {
         ResultSet resultSet = this.stmt.executeQuery(sql);
+        //System.out.println(resultSet.getString(2));
         return resultSet;
 
     }

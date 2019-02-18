@@ -27,6 +27,7 @@ public class Context {
         Checker checkerMasterMind=new CheckerMasterMind();
         //Comparatore comparatore=new Comparatore();
         Dao instanceDao=Dao.newIstance();
+        LogService logService= new LogService(instanceDao);
         TryRepository tryRepository =new TryRepository(instanceDao);
         CombinationRepository combinationRepository =new CombinationRepository(instanceDao);
         CombinationService combinationService=new CombinationService(combinationRepository, checkerMasterMind);
@@ -35,7 +36,7 @@ public class Context {
         UserService userService=new UserService(combinationService, tryService);
         ValidatorService validatorService=new ValidatorService();
         this.controllerClassifiche=new ControllerClassifiche(userService, tentativeService);
-        this.controller=new Controller(validatorService, combinationService, tryService);
+        this.controller=new Controller(validatorService, combinationService, tryService, logService);
     }
 
     public Controller getController(){

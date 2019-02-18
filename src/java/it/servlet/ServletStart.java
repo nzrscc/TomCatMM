@@ -28,13 +28,14 @@ public class ServletStart extends HttpServlet {
         request.getSession().setAttribute("scelta", scelta);
         if(scelta.equals("MasterMind"))
         {
-            System.out.println("Sono in master");
-            String username=request.getParameter("username");
-            request.getSession().setAttribute("username", username);
-            response.sendRedirect("Ciclo");
+            request.getRequestDispatcher("jsp/logIn.jsp").include(request,response);
+            //System.out.println("Sono in master");
+            //String username=request.getParameter("username");
+            //request.getSession().setAttribute("username", username);
+            //response.sendRedirect("Ciclo");
         }else
         {
-            System.out.println("Sono in classifica");
+            //System.out.println("Sono in classifica");
             String username=request.getParameter("username");
             response.sendRedirect("Classifica");
         }

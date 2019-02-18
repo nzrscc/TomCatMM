@@ -1,6 +1,7 @@
 package it.controllers;
 
 import it.services.CombinationService;
+import it.services.LogService;
 import it.services.TryService;
 import it.services.ValidatorService;
 
@@ -8,6 +9,8 @@ public class Controller {
     private ValidatorService validatorService;
     private CombinationService combinationService;
     private TryService tryService;
+    private LogService logService;
+
     private int[] soluzione=new int[3];
     private int[] input=new int[3];
     private int[] esito=new int[2];
@@ -15,6 +18,7 @@ public class Controller {
     public int[] getSoluzione() {
         return soluzione;
     }
+
 
     public int[] getInput() {
         return input;
@@ -29,12 +33,22 @@ public class Controller {
         return esito;
     }
 
-    public Controller(ValidatorService validatorService, CombinationService combinationService, TryService tryService) {
+    public Controller(ValidatorService validatorService, CombinationService combinationService, TryService tryService, LogService logService) {
         this.combinationService=combinationService;
         this.validatorService=validatorService;
         this.tryService=tryService;
+        this.logService=logService;
     }
 
+    public boolean controlloUtente(String username, String password)
+    {
+        return this.logService.controlloUtente(username, password);
+
+    }
+    public boolean registraLog(String username, String password)
+    {
+        return this.logService.registraUtente(username, password);
+    }
     public void creaCombinazione()
     {
         this.soluzione = this.combinationService.create();

@@ -28,6 +28,8 @@ public class Game extends HttpServlet {
     private void controllGame(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         String username = (String) request.getSession().getAttribute("username");
+        //this.controller = Context.getInstance().getController();
+        //this.controller.registraLog("nzr", "242dn");
         String combination = request.getParameter("numero1");
         combination += "," + request.getParameter("numero2");
         combination += "," + request.getParameter("numero3");

@@ -41,8 +41,8 @@ public class TentativeService implements ClassificheService {
             dto.setUser(this.prendiUser(combinationList, dto.getID()));
             dto.setSoluzione(this.prendiSoluzione(combinationList, dto.getID()));
             dtos.add(dto);
-            System.out.println("User= "+ dto.getUser()+" nTentativi= "+current.getId()+" "+"\tPosEsatta= "+current.getPosEsatta()+"\tNumEsatto= "+current.getNumEsatto()
-                    +"\tSoluzione= "+dto.getSoluzione()+"\tInput= "+current.getInput());
+            //System.out.println("User= "+ dto.getUser()+" nTentativi= "+current.getId()+" "+"\tPosEsatta= "+current.getPosEsatta()+"\tNumEsatto= "+current.getNumEsatto()
+              //      +"\tSoluzione= "+dto.getSoluzione()+"\tInput= "+current.getInput());
         }
         Collections.sort(dtos);
         System.out.println(dtos.toString());
